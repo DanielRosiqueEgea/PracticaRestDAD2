@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta charset="UFT-8">
+	<title>Producto y Factura Actual</title>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<!--AÃ±adimos estilo para darle un toque mÃ¡s chulo a la tabla -->
+	<style>
+	table, th, td {
+  		border:1px solid black;
+	}
+	#tablaDatos{
+		width: 100%;
+		height: 100%;
+	}
+	#tablaDatos td,th{
+		width:50%;
+	}
+
+</style>
+</head>
+<body>
+
+<!-- Para separar la pagina html del codigo creamos dos ficheros javascript separados.-->
+<script type="text/javascript" src="js/productos.js"></script><!-- se ha separado el javascript en otro archivo para dejar el html mas limpio -->
+<script type="text/javascript" src="js/facturaActual.js"></script><!-- se ha separado el javascript en otro archivo para dejar el html mas limpio -->
+
+<header>
+<h1>Gestion de Productos</h1>
+</header>
+<section>
+	ID Producto<input type="number" id="idNewProd" required=""> 
+	Nombre Producto<input type="text" id="nombreNewProd" required=""> <!-- Se validan los campos dentro de la funcion snd -->	
+	Precio Producto<input type="number" id="precioNewProd" required=""> 
+	<button id="addProducto">Add Producto</button>
+</section>
+
+
+<table id="tablaDatos"><!-- La tabla de datos contiene una columna para todos los productos y otra para la factura acutal -->
+	<tbody><tr>
+		<th>Productos</th>
+		<th id="headerActual" title="2">Factura Actual: </th><!-- En esta fila se va a "guardar" la factura actual, una vez que se pulse el botÃ³n de "generar Factura" se guardarÃ¡ -->
+	</tr>
+	<tr>
+		<td rowspan="2">
+		<p id="productos"></p>
+		</td>
+		<td>
+			<button id="generarFactura">Generar Factura</button>
+			<!-- Las factuas junto con su gestion (unicamente eliminar, puesto que modificar y aÃ±adir es mientras se estÃ¡ creando) 
+			estÃ¡n en otro html
+			Usamos replace para cambiar la localizacion por que si usamos locarion no coge la ruta del proyecto
+			-->
+			<button onclick="window.location.replace('facturas.html')">Ir a Facturas</button>
+		</td>
+ 	</tr>
+	<tr>
+		<td>
+			<p id="facturaActual"></p>
+		</td>
+	</tr>
+
+</tbody></table>
+
+
+</body></html>

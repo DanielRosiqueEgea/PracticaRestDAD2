@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Facturas</title>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	
+	<style>
+	table, th, td {
+  		border:1px solid black;
+	}
+	#tablaFacturas{
+		width: 100%;
+		height: 100%;
+	}
+	#tablaFacturas td,th{
+		width:100%;
+	}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript" src="js/facturas.js"></script><!-- se ha separado el javascript en otro archivo para dejar el html mas limpio -->
+
+<nav>
+	<button onclick="window.location.replace('index.html')">Volver</button>
+</nav>
+<table id="tablaFacturas"><!-- La tabla se genera dinamicamente añadiendo tr para cada factura -->
+	<tbody>
+	<tr>
+		<th>Facturas</th>
+	</tr>
+
+</table>
+
+</body>
+</html>
